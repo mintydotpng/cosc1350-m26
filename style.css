@@ -1,0 +1,14 @@
+html {
+    justify-content:center;
+    font-family:"Georgia", serif;
+}
+myname {
+    font-family:"Courier New", monospace;
+    color:#3c2f5f;
+}
+header {
+    color:lightgreen
+}
+footer {
+    color:lightgreen
+}
