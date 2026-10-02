@@ -2,9 +2,19 @@ html {
     justify-content:center;
     font-family:"Georgia", serif;
 }
-myname {
+body {
+    display: flex;
+}
+aside {
+    height: 100px;
+    width: 200px;
+}
+#myname {
     font-family:"Courier New", monospace;
     color:#3c2f5f;
+}
+#catimg {
+    border:#3c2f5f, 2px, solid;
 }
 header {
     color:lightgreen
