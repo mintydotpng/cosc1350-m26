@@ -10,11 +10,22 @@ aside {
     height: 100px;
     width: 200px;
 }
-.calcborder {
+.calcbox {
     background-color: plum;
     border:#3c2f5f, 2px, dotted;
-    padding:20px;
+    left: 50%;
+    right: 50%;
     width: 350px;
+    height: 500px;
+}
+.calculate {
+    margin: auto;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #3c2f5f;
+    color: plum;
 }
 .catimg {
     border:#3c2f5f, 2px, solid;
