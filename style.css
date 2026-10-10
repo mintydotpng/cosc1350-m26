@@ -4,20 +4,24 @@ html {
 }
 body {
     display: flex;
+    background-color: lightgreen;
 }
 aside {
     height: 100px;
     width: 200px;
 }
-#myname {
-    font-family:"Courier New", monospace;
-    color:#3c2f5f;
+.calcborder {
+    background-color: plum;
+    border:#3c2f5f, 2px, dotted;
+    padding:20px;
+    width: 350px;
 }
-#catimg {
+.catimg {
     border:#3c2f5f, 2px, solid;
 }
-header {
-    color:lightgreen
+.myname {
+    font-family:"Courier New", monospace;
+    color:#3c2f5f;
 }
 footer {
     color:lightgreen
