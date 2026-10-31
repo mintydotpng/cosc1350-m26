@@ -21,16 +21,16 @@
           lowOrHigh.textContent = '';
           setGameOver();
         } else if (guessCount === 10) {
-          lastResult.textContent = '!!!GAME OVER!!!';
+          lastResult.textContent = 'Game Over!';
           lowOrHigh.textContent = '';
           setGameOver();
         } else {
           lastResult.textContent = 'Wrong!';
           lastResult.style.backgroundColor = 'red';
           if(userGuess < randomNumber) {
-            lowOrHigh.textContent = 'Last guess was too low!' ;
+            lowOrHigh.textContent = 'Last guess was too low.' ;
           } else if(userGuess > randomNumber) {
-            lowOrHigh.textContent = 'Last guess was too high!';
+            lowOrHigh.textContent = 'Last guess was too high.';
           }
         }
 
