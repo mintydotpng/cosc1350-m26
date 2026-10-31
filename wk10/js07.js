@@ -34,6 +34,7 @@ document.getElementById("getFile").onchange = function() {
 
       let sourceText = sourceDoc.textContent;
       wordCloud(sourceText);
+}
       function wordCloud(sourceText) {
             sourceText = sourceText.toLowerCase();
             sourceText = sourceText.trim();
@@ -56,6 +57,7 @@ document.getElementById("getFile").onchange = function() {
                   }
             }
             unique.sort(byDuplicate);
+      }
             function byDuplicate(a, b) {
                   return b[1] - a[1];
             }
@@ -70,8 +72,6 @@ document.getElementById("getFile").onchange = function() {
                   word.style.fontSize = unique[i][1] / maxCount + "em";
                   cloudBox.appendChild(word);
             }
-      }
-};
 
 
 /*--- ----------------------------------------------*/
