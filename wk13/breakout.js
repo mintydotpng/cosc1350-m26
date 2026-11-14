@@ -1,21 +1,12 @@
 /* ..:: B R E A K O U T   G A M E ::..
- *
  * breakout.js
  * Author: Minty Allred
  * Date: 11/13/26
  * Project for COSC 1350
- *
  */
 
 // get the canvas element from the DOM.
 const canvas = document.getElementById("myCanvas");
-
-/*  create a "2d rendering context".
- *  I suggest looking up and reading about the canvas.getContext function.
- *  You don't have to understand everything about canvas rendering contexts,
- *  but it help you get to know what the ctx object can and can't draw.
- */
-
 const ctx = canvas.getContext("2d");
 
 //drawing a ball requires the x position, y position, and radius
@@ -29,10 +20,40 @@ ballRender=()=>{
   ctx.beginPath();
   //arc creates circular arc starting at 0, ending at 2pi (360 degrees)
   ctx.arc(xPos, yPos, ballRadius, 0, Math.PI * 2);
-  //fill in the circular path with default color
+  ctx.fillStyle = "purple";
   ctx.fill();
   ctx.closePath();
 }
+
+drawPaddle=()=>{
+  ctx.beginPath();
+  ctx.fillStyle = "#3c2f5f";
+  ctx.fillRect(xPaddle, 385, 100, 15);
+  if (moveRight === true) {
+    xPaddle += 3;
+  }
+  else if (moveLeft === true) {
+    xPaddle -= 3;
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e === 37) {
+    moveLeft = true;
+  }
+  else if (e === 39) {
+    moveRight = true;
+  }
+})
+
+document.addEventListener('keyup', function(e) {
+  if (e === 37) {
+    moveLeft = false;
+  }
+  else if (e === 39) {
+    moveRight = false;
+  }
+});
 
 /*
 * draw() can be thought of as our main function.

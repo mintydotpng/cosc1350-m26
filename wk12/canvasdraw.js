@@ -1,4 +1,5 @@
-let cx = document.querySelector("canvas").getContext("2d"); 
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
 
 function drawTrapezoid() {
     ctx.beginPath();
