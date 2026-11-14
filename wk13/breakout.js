@@ -1,8 +1,8 @@
 /* ..:: B R E A K O U T   G A M E ::..
  *
  * breakout.js
- * Author:
- * Date:
+ * Author: Minty Allred
+ * Date: 11/13/26
  * Project for COSC 1350
  *
  */
@@ -48,10 +48,10 @@ ballRender=()=>{
 draw=()=> {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ballRender();
-
-  //uncomment when you're ready to send the ball flying!
-  // xPos += xMoveDist;
-  // yPos += yMoveDist;
+  xPos += xMoveDist;
+  yPos += yMoveDist;
+  if(xPos > canvas.width - ballRadius) xMoveDist = -xMoveDist;
+  if(yPos > canvas.height - ballRadius) yMoveDist = -yMoveDist;
 };
 
 /*
