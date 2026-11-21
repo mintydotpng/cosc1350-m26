@@ -25,7 +25,7 @@ ballRender=()=>{
   ctx.closePath();
 }
 
-drawPaddle=()=>{
+paddleRender=()=>{
   ctx.beginPath();
   ctx.fillStyle = "#3c2f5f";
   ctx.fillRect(xPaddle, 385, 100, 15);
@@ -34,6 +34,36 @@ drawPaddle=()=>{
   }
   else if (moveLeft === true) {
     xPaddle -= 3;
+  }
+}
+
+const brickPadding = 10;
+const brickWidth = 90;
+const brickHeight = 25;
+const brickRows = 4;
+const brickColumns = 6;
+const brickOffsetTop = 40;
+const brickOffsetLeft = 5;
+const bricks = [];
+
+for (let row = 0; row < brickRows; row++) {
+  for (let col = 0; col < brickColumns; col++) {
+
+    bricks[row][col] = {
+      x: brickOffsetLeft + (brickWidth + brickPadding) * col,
+      y: brickOffsetTop + (brickHeight + brickPadding) * row,
+      width: brickWidth,
+      height: brickHeight
+    };
+  }
+}
+
+bricksRender=()=>{
+  for (let i = 0; i < bricks.length; i++) {
+    ctx.beginPath();
+    ctx.fillStyle = "#3c2f5f";
+    ctx.fillRect(bricks[i].x, bricks[i].y, bricks[i].width, bricks[i].height);
+    ctx.closePath();
   }
 }
 
@@ -73,6 +103,8 @@ draw=()=> {
   yPos += yMoveDist;
   if(xPos > canvas.width - ballRadius) xMoveDist = -xMoveDist;
   if(yPos > canvas.height - ballRadius) yMoveDist = -yMoveDist;
+  paddleRender();
+  bricksRender();
 };
 
 /*
